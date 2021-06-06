@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_content %}
+<h1>{{ city.city }}</h1>
+<div class="row">
+    <div class="col-md-8">
+        <img src="{% static city.image %}" alt="" width="100%">
+    </div>
+    <div class="col-md-4">
+        <p style="font: bold italic 210% sans-serif;">Место, которое не оставит равнодушным никого: </p>
+        <p>{{ city.destination }}</p>
+        <p><a href= "https://ru.wikipedia.org/wiki/Заглавная_страница">более детально описано здесь.</a></p>
+        <br>
+        <h5>Полезные ссылочки:</h5>
+        <a href={{city.link}}>Подобрать гостиницу</a>
+        <p></p>
+        <a href={{city.linkavia}}>билетики на самолётик</a>
+        <p></p>
+        <a href={{city.linkbus}}>билетики на автобус</a>
+
+    </div>
+</div>
+
+{% endblock %}

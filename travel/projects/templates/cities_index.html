@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_content %}
+<h1><font size="7" color="grey" face="COMIC SANS MS"> Здесь мы покажем о прекрасном. Смотрите и вдохновляйтесь...</font></h1>
+</p>
+<div class="row">
+{% for city in cities %}
+    <div class="col-md-4">
+        <div class="card mb-2">
+            <img class="card-img-top" src="{% static city.image %}">
+            <div class="card-body">
+                <h5 class="card-title">Вам здесь понравится</h5>
+                <p class="card-text">подробная информация</p>
+                <a href="{% url 'city_detail' city.pk %}"
+                   class="btn btn-primary">
+                    Ознакомится
+                </a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
